@@ -33,5 +33,5 @@ for j in range(len(data)):
             i += 1
 
     if correct:
-        print(data_copy)
+        print(j,data_copy[j])
         print(acc)
