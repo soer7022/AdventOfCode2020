@@ -11,4 +11,4 @@ for adapter in data:
     diff_three += diff == 3
     diff_one += diff == 1
 
-print(diff_one*diff_three,diff_one,diff_three)
+print(diff_one * diff_three, diff_one, diff_three)
