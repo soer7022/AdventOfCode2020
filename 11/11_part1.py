@@ -1,4 +1,5 @@
 import sys
+from os import system
 
 with open("input.txt") as f:
     data = f.read().split("\n")
@@ -24,7 +25,10 @@ while True:
             elif current_pos == "#" and adjacent_tiles.count("#") >= 4:
                 data_copy[i] = data_copy[i][:j] + "L" + data_copy[i][j + 1:]
     equal = True
+    system('clear')
+
     for i in range(len(data_copy)):
+        print(data_copy[i])
         if not data_copy[i] == prev_data[i]:
             equal = False
     if equal:
