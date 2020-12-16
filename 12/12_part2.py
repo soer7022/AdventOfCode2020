@@ -1,26 +1,33 @@
 with open("input.txt") as f:
     data = [(l[0], int(l[1:])) for l in f.read().split("\n")]
-directions = ["N", "E", "S", "W"]
-facing = 1
 north = 0
 east = 0
+w_north = 1
+w_east = 10
 for instr in data:
     dir_instr = instr[0]
     num = instr[1]
     if dir_instr == "F":
-        dir_instr = directions[facing]
+        north += num * w_north
+        east += num * w_east
     if dir_instr == "L":
-        facing = (facing - (num//90)) % len(directions)
+        while num:
+            w_east, w_north = -w_north, w_east
+            num -= 90
     if dir_instr == "R":
-        facing = (facing + (num//90)) % len(directions)
+        while num:
+            w_east, w_north = w_north, -w_east
+            num -= 90
     if dir_instr == "N":
-        north += num
+        w_north += num
     if dir_instr == "E":
-        east += num
+        w_east += num
     if dir_instr == "W":
-        east -= num
+        w_east -= num
     if dir_instr == "S":
-        north -= num
+        w_north -= num
+    print(instr)
+    print(w_east, w_north)
+    print()
 
 print(abs(north) + abs(east))
-
