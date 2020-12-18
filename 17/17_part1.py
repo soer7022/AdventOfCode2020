@@ -3,7 +3,8 @@ import sys
 with open("input.txt") as f:
     data = f.read().split("\n")
 
-neighbors_to_check = []
+neighbors_to_check = set()
+
 
 
 def check_loc(location, is_active):
@@ -14,7 +15,7 @@ def check_loc(location, is_active):
             for c in [-1, 0, 1]:
                 if not a == b == c == 0:
                     if is_active:
-                        neighbors_to_check.append((x + a, y + b, z + c))
+                        neighbors_to_check.add((x + a, y + b, z + c))
                     try:
                         if active[(x + a, y + b, z + c)] is True:
                             active_neighbors += 1

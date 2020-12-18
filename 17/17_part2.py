@@ -35,10 +35,7 @@ def check_loc(location, is_active):
         elif not active[location]:
             raise KeyError
     except KeyError:
-        if active_neighbors == 3:
-            return True
-        else:
-            return False
+        return active_neighbors == 3
 
 
 # Formatted: (x,y,z,w) or (col,row,layer,weird)
