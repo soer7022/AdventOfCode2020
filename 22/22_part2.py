@@ -13,6 +13,8 @@ def play_game(p1_deck, p2_deck, game_id):
     # print("")
     winner = True
     while not len(p1_deck) == 0 and not len(p2_deck) == 0:
+        if game_id > 1 and max(p1_deck) > max(p2_deck):
+            return True
         # print(f"-- Round {round} --")
         # print("Player 1's deck: " + ", ".join([str(s) for s in p1_deck]))
         # print("Player 2's deck: " + ", ".join([str(s) for s in p2_deck]))
