@@ -42,6 +42,7 @@ for ticket in nearby_tickets:
 
 confirmed_names = ["" for i in range(len(your_ticket))]
 finished = False
+print(possible_names)
 while not finished:
     finished = True
     for index, item in enumerate(possible_names):
